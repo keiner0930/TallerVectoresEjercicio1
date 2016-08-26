@@ -59,6 +59,17 @@ public class Principal1 extends javax.swing.JFrame {
 
         jLabel2.setText("Longitud :");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+
+        txtLongitud.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtLongitudActionPerformed(evt);
+            }
+        });
+        txtLongitud.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtLongitudKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtLongitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 50, 30));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 140, 80));
@@ -197,12 +208,22 @@ public class Principal1 extends javax.swing.JFrame {
       }  
     }
       
-          
-        //txtResultado.append(v[i]+"\n");
-        txtResultado.setText("La sumatoria es "+sum+"\n"+"La productoria es "+prod+"\n"+"El elemento menor es "+menor+"\n"+"El elemento mayor es "+mayor);
+  txtResultado.setText("La sumatoria es "+sum+"\n"+"La productoria es "+prod+"\n"+"El elemento menor es "+menor+"\n"+"El elemento mayor es "+mayor);
         
        
     }//GEN-LAST:event_cmdMostrarActionPerformed
+
+    private void txtLongitudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLongitudActionPerformed
+         // TODO add your handling code here:
+    }//GEN-LAST:event_txtLongitudActionPerformed
+
+    private void txtLongitudKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLongitudKeyTyped
+      char c=evt.getKeyChar(); 
+     if(!Character.isDigit(c)) { 
+              getToolkit().beep();  
+              evt.consume();
+          }
+    }//GEN-LAST:event_txtLongitudKeyTyped
 
     /**
      * @param args the command line arguments
