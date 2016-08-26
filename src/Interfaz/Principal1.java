@@ -40,6 +40,7 @@ public class Principal1 extends javax.swing.JFrame {
         cmdCrear = new javax.swing.JButton();
         cmdLlenarManual = new javax.swing.JButton();
         cmdMostrar = new javax.swing.JButton();
+        cmdAutomatico = new javax.swing.JButton();
         cmdBorrar = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -105,7 +106,17 @@ public class Principal1 extends javax.swing.JFrame {
                 cmdMostrarActionPerformed(evt);
             }
         });
-        jPanel3.add(cmdMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 110, -1));
+        jPanel3.add(cmdMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 110, -1));
+
+        cmdAutomatico.setBackground(new java.awt.Color(204, 204, 204));
+        cmdAutomatico.setFont(new java.awt.Font("Times New Roman", 2, 11)); // NOI18N
+        cmdAutomatico.setText("Llenar Auto");
+        cmdAutomatico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdAutomaticoActionPerformed(evt);
+            }
+        });
+        jPanel3.add(cmdAutomatico, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 110, -1));
 
         cmdBorrar.setBackground(new java.awt.Color(204, 204, 204));
         cmdBorrar.setFont(new java.awt.Font("Times New Roman", 2, 11)); // NOI18N
@@ -115,9 +126,9 @@ public class Principal1 extends javax.swing.JFrame {
                 cmdBorrarActionPerformed(evt);
             }
         });
-        jPanel3.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 110, -1));
+        jPanel3.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 110, -1));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 60, 130, 160));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 60, 130, 180));
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Resultado", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 51))); // NOI18N
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -169,12 +180,14 @@ public class Principal1 extends javax.swing.JFrame {
     }
     }//GEN-LAST:event_cmdCrearActionPerformed
 
-    private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
-      txtLongitud.setText("");
-     txtResultado.setText("");
-     v= null;
-     txtLongitud.requestFocusInWindow();  
-    }//GEN-LAST:event_cmdBorrarActionPerformed
+    private void cmdAutomaticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdAutomaticoActionPerformed
+    double n;
+        for(int i=0;i<v.length;i++){
+        n= (int)(Math.random()*50 + 1);
+        v[i]= n;        
+        }
+    JOptionPane.showMessageDialog(this, "Vector Llenado Correctamente");
+    }//GEN-LAST:event_cmdAutomaticoActionPerformed
 
     private void cmdLlenarManualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLlenarManualActionPerformed
     double n;
@@ -225,6 +238,13 @@ public class Principal1 extends javax.swing.JFrame {
           }
     }//GEN-LAST:event_txtLongitudKeyTyped
 
+    private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
+       txtLongitud.setText("");
+     txtResultado.setText("");
+     v= null;
+     txtLongitud.requestFocusInWindow();  
+    }//GEN-LAST:event_cmdBorrarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -261,6 +281,7 @@ public class Principal1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cmdAutomatico;
     private javax.swing.JButton cmdBorrar;
     private javax.swing.JButton cmdCrear;
     private javax.swing.JButton cmdLlenarManual;
